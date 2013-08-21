@@ -5,6 +5,7 @@ module.exports = (grunt) ->
     grunt.loadNpmTasks('grunt-contrib-clean')
     grunt.loadNpmTasks('grunt-browserify')
     grunt.loadNpmTasks('grunt-contrib-less')
+    grunt.loadNpmTasks('grunt-shell')
 
     config =
         paths:
@@ -66,11 +67,16 @@ module.exports = (grunt) ->
                 src: "./client/styles/bootstrap.less"
                 dest:"./.tmp/style.css"
 
+        shell:
+            bower:
+                command: "node_modules/.bin/bower install"
+
 
     grunt.registerTask('build', [
-        'clean:dist',
-        'less:dist',
-        'handlebars:dist',
+        'clean:dist'
+        'shell:bower'
+        'less:dist'
+        'handlebars:dist'
         'browserify:dist'
     ]);
 

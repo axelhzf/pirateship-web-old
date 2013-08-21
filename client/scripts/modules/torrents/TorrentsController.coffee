@@ -25,17 +25,12 @@ class TorrentsController extends Controller
         @searchFormView = new TorrentsSearchFormView({controller : @})
         @resultsView = new TorrentsResultsView({collection: @torrents})
 
-        @torrents.fixture()
-        console.log @torrents
-
     search: (query) ->
         @router.navigate("/search/#{query}")
         @torrents.findByQuery(query)
 
     start: ->
         @router = new TorrentsRouter({controller: @})
-
-        console.log $('body')
 
         @layoutView.render()
         @layoutView.searchForm.show(@searchFormView)

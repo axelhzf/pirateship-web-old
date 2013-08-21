@@ -5,12 +5,9 @@
 var express = require('express');
 var http = require('http');
 var path = require('path');
-var params = require('express-params');
-
 require('coffee-script');
 
 var app = express();
-params.extend(app);
 
 // all environments
 app.set('port', process.env.PORT || 3000);
