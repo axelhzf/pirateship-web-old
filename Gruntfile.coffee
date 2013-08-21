@@ -69,7 +69,9 @@ module.exports = (grunt) ->
 
     grunt.registerTask('build', [
         'clean:dist',
-        'coffee:dist'
+        'less:dist',
+        'handlebars:dist',
+        'browserify:dist'
     ]);
 
     grunt.registerTask('default', ['build']);
