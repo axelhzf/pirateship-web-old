@@ -21,6 +21,7 @@ commands = [
     run("cd dev/deploy/pirateship-web")
     run("npm run-script stop")
     run("git pull")
+    run("npm install")
     run("npm run-script build")
     run("npm run-script start")
     close

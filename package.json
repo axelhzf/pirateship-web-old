@@ -3,8 +3,8 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "start": "node_modules/.bin/forever start server/app.js",
-    "stop": "node_modules/.bin/forever stop server/app.js",
+    "start": "node_modules/forever/bin/forever start server/app.js",
+    "stop": "node_modules/forever/bin/forever stop server/app.js",
     "build": "npm install && node_modules/.bin/grunt build"
   },
   "dependencies": {
@@ -24,7 +24,7 @@
     "grunt-contrib-watch": "~0.5.2",
     "grunt-shell": "~0.3.1",
     "grunt-cli": "~0.1.9",
-    "ssh": "~1.4.1",
+    "shh": "~0.3.2",
     "async": "~0.2.9",
     "forever": "~0.10.8"
   }
