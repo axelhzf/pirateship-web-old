@@ -23,3 +23,5 @@ gulp.task("watch", function () {
   gulp.watch(paths.jade, ["jade"]);
   gulp.watch(paths.sass + "/*.scss", ["sass"]);
 });
+
+gulp.task("default", ["jade", "sass"]);
