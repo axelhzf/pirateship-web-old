@@ -46,6 +46,7 @@ header, .torrents-search-form, .torrents-results {
 
   td:first-child, th:first-child {
     text-align: left;
+    word-break: break-all;
   }
 
   td {
