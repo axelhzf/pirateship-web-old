@@ -14,7 +14,7 @@ header
           th S
           th L
       tbody
-        tr(ng-repeat="torrent in torrents")
+        tr(ng-repeat="torrent in torrents", ng-click="downloadTorrent(torrent.link)")
           td {{torrent.title}}
           td {{torrent.seeds}}
           td {{torrent.leechers}}

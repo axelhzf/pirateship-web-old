@@ -20,6 +20,9 @@ app.factory("torrentService", function ($http, $q) {
       } else {
         return $q.when(undefined);
       }
+    },
+    download : function (link) {
+      return $http.get("/api/download/" + link);
     }
   };
   return torrentService;
@@ -46,5 +49,8 @@ app.controller("TorrentsController", function ($scope, torrentService) {
       debounceSearchTorrents()
     }
   });
+
+  $scope.downloadTorrent = torrentService.download;
+
 
 });
