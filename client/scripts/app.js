@@ -44,7 +44,6 @@ app.controller("TorrentsController", function ($scope, torrentService) {
   $scope.searchTorrents = searchTorrents();
 
   $scope.$watch("query", function (newValue, oldValue) {
-    console.log("change query", newValue);
     if (newValue !== oldValue) {
       debounceSearchTorrents()
     }
