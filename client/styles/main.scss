@@ -1,0 +1,61 @@
+@import "../bower_components/bootstrap-sass/vendor/assets/stylesheets/bootstrap";
+
+$purple: #563B7E;
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: $purple;
+}
+
+header {
+  color: #fff;
+}
+
+header, .torrents-search-form, .torrents-results {
+  margin-bottom: 10px;
+}
+
+.content {
+  max-width: 700px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.torrents-search-form {
+  background-color: $purple;
+  padding: 0;
+
+  input {
+    font-size: 20px;
+    width: 100%;
+  }
+}
+
+.torrents-results {
+  background-color: #fff;
+  padding: 10px 10px;
+
+  td, th {
+    text-align: right;
+  }
+
+  td:first-child, th:first-child {
+    text-align: left;
+  }
+
+  td {
+    margin-bottom: 10px;
+  }
+
+
+  .table-striped > tbody > tr:hover > td {
+    background-color: $purple;
+    color: #fff;
+    cursor: pointer;
+  }
+}

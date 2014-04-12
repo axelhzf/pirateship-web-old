@@ -1,0 +1,20 @@
+header
+  h1 Pirateship
+
+.torrents
+  form.torrents-search-form(ng-submit="searchTorrents()")
+      input(type="text", ng-model="query", placeholder="Buscar Torrent")
+
+  .torrents-results
+    h2 Torrents results "{{query}}"
+    table.table.table-striped
+      thead
+        tr
+          th Torrent
+          th S
+          th L
+      tbody
+        tr(ng-repeat="torrent in torrents")
+          td {{torrent.title}}
+          td {{torrent.seeds}}
+          td {{torrent.leechers}}

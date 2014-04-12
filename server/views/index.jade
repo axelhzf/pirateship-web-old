@@ -1,0 +1,17 @@
+doctype html
+html
+  head
+    meta(charset='utf-8')
+    title Pirateship
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    link(rel='stylesheet', href='style/main.css')
+  body
+    .content
+      div(ng-app="app", ng-view)
+
+
+script(src='bower_components/jquery/dist/jquery.js')
+script(src='bower_components/underscore/underscore.js')
+script(src='bower_components/angular/angular.js')
+script(src='bower_components/angular-route/angular-route.js')
+script(src='scripts/app.js')
