@@ -5,7 +5,6 @@
 var express = require('express');
 var http = require('http');
 var path = require('path');
-require('coffee-script');
 
 var app = express();
 
