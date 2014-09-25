@@ -30,7 +30,8 @@
     "koa-views": "^2.0.3",
     "mkdirp": "^0.5.0",
     "thunkify": "^2.1.2",
-    "underscore": "^1.6.0"
+    "underscore": "^1.6.0",
+    "pirateship": "git://github.com/axelhzf/pirateship.git#master"
   },
   "devDependencies": {
     "gulp": "^3.8.2",

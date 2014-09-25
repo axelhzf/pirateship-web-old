@@ -3,11 +3,13 @@ var router = require("koa-router");
 var controller = require("./controllers/controller");
 var moviesApi = require("./api/moviesApi");
 var downloadsApi = require("./api/downloadApi");
+var findApi = require("./api/findApi");
 
 var r = new router();
 r.get("/", controller.render("index/index"));
 r.get("/api/movies/featured", moviesApi.featured);
 r.get("/api/download", downloadsApi.download);
+r.get("/api/find/:query", findApi.find);
 
 
 exports.configure = function (app) {
