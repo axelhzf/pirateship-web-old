@@ -1,10 +1,8 @@
 header
   h1 Pirateship
-
 .torrents
   form.torrents-search-form(ng-submit="searchTorrents()")
-      input(type="text", ng-model="query", placeholder="Buscar Torrent")
-
+    input(type="text", ng-model="query", placeholder="Buscar Torrent")
   .torrents-results
     h2 Torrents results "{{query}}"
     table.table.table-striped

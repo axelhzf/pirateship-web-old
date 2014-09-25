@@ -1,8 +1,8 @@
-node_modules
-temp
-dist
-.sass-cache
-.tmp
-client/bower_components
 *.iml
 .idea
+
+node_modules
+app/.assets
+app/client/components
+tmp
+logs
