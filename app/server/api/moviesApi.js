@@ -14,7 +14,20 @@ var cacheOptions = {
 var cache = new Cacheman('trakt', cacheOptions);
 
 exports.featured = function* () {
-  var result = yield request.get({url: "https://yts.re/api/list.json?sort=seeds&limit=200", json: true});
+  var totalSets = 3;
+  var movies = [];
+  for (var i = 0; i < totalSets; i++) {
+    var moviesSet = yield getFeaturedSet(i);
+    movies.push(moviesSet);
+  }
+  movies = _.flatten(movies, true);
+  this.body = movies;
+};
+
+function* getFeaturedSet (setNumber) {
+  console.log("get featured set ", setNumber);
+  var url = "https://yts.re/api/list.json?sort=seeds&limit=50&set=" + setNumber;
+  var result = yield request.get({url: url, json: true});
   var body = result.body;
   if (body.MovieList) {
     var movies = _.map(body.MovieList, parseMovieItem);
@@ -22,12 +35,9 @@ exports.featured = function* () {
       return movie.imdb_id;
     });
     movies = yield parallel(movies.map(fillDataFromTrakt), 10);
-
-    this.body = movies;
-  } else {
-    this.body = [];
+    return movies
   }
-};
+}
 
 function parseMovieItem (movieItem) {
   return {
